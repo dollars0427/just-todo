@@ -5,7 +5,8 @@ var webpackCfg = require('./webpack.config.js');
 
 gulp.task('default', ['build']);
 gulp.task('watch', function () {
-  gulp.watch('src/*.js', ['build']);
+  gulp.watch('src/*.jsx', ['build']);
+  gulp.watch('src/*/*.jsx', ['build']);
 });
 
 gulp.task('build', function () {

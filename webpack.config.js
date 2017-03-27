@@ -2,9 +2,9 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.jsx',
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, 'public/dist'),
         filename: 'bundle.js',
     },
     module: {
@@ -14,11 +14,11 @@ module.exports = {
             loader: 'babel',
         }]
     },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: { warnings: false }
-        })
-    ],
+    //plugins: [
+    //    new webpack.optimize.UglifyJsPlugin({
+    //        compress: { warnings: false }
+    //    })
+    //],
     resolve: {
         extensions: ['', '.js', '.jsx']
     },
