@@ -1,6 +1,6 @@
 import React from 'react';
-import TodoListView from './components/TodoListView';
-import AddTodo from './components/AddTodo';
+import TodoListView from './containers/TodoListView';
+import AddTodo from './containers/AddTodo';
 
 const App = () => (
   <div>
