@@ -1,13 +1,25 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {completeTodo} from '../actions';
 
 class Todo extends React.Component {
     render(){
         return (
-            <li onClick={()=>{
-                this.props.dispatch(completeTodo(this.props.id));
-                }}>
-                {this.props.text}
-            </li>
+            <div>
+                {this.props.completed ? (
+                    <li onClick={()=>{
+                            this.props.dispatch(completeTodo(this.props.id));
+                        }}>
+                        Completed:{this.props.text}
+                    </li>
+                ): (
+                    <li onClick={()=>{
+                            this.props.dispatch(completeTodo(this.props.id));
+                        }}>
+                        {this.props.text}
+                    </li>
+                )}
+            </div>
         )
     }
 
@@ -17,4 +29,4 @@ class Todo extends React.Component {
     };
 }
 
-export default Todo;
+export default connect()(Todo);

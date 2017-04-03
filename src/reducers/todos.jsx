@@ -8,7 +8,7 @@ const todo = (state, action) => {
         }
         case 'COMPLETE_TODO':
         if (state.id !== action.id) {
-            return state
+            return state;
         }
 
         return Object.assign({}, state, {
@@ -27,6 +27,10 @@ const todos = (state = [], action) => {
             ...state,
             todo(undefined, action)
         ]
+        case 'COMPLETE_TODO':
+        return state.map(t =>
+            todo(t, action)
+        )
         default:
         return state
     }
