@@ -6,3 +6,10 @@ export const addTodo = (text) => {
     text
   }
 }
+
+export const completeTodo = (id) => {
+    return {
+        type: 'COMPLETE_TODO',
+        id: id
+    }
+}
