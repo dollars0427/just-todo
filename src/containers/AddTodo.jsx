@@ -4,11 +4,13 @@ import { addTodo } from '../actions';
 
 class TodoForm extends React.Component {
     render(){
+        let value;
         return (<div>
             <form onSubmit={(e)=> {
                     e.preventDefault();
-                    let value = this.textInput.value;
+                    value = this.textInput.value;
                     this.props.dispatch(addTodo(value));
+                    this.textInput.value = '';
                 }} >
                 <div>
                     <label htmlFor="add-todo">Add Todo:</label>
