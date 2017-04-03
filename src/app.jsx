@@ -1,11 +1,15 @@
 import React from 'react';
 import TodoListView from './containers/TodoListView';
-import AddTodo from './containers/AddTodo';
+import TodoForm from './containers/AddTodo';
 
-const App = () => (
-  <div>
-    <TodoListView />
-    <AddTodo />
-  </div>
-)
+class App extends React.Component {
+    render(){
+        return (
+            <div>
+              <TodoListView />
+              <TodoForm />
+            </div>
+        )
+    }
+}
 export default App;
